@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-image: url('bg.avif');
+            padding: 40px;
+            border-radius: 8px;
+            border: #ffffff;
+            box-shadow: 0 4px 8px rgba(177, 177, 177, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+input:focus {
+    border-color: #0066cc;
+}
+
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background-color: #005bb5;
+        }
+
+        .new-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .new-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required background="transparent">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div id="extra-button-container"></div>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const correctUsername = 'rohan';
+            const correctPassword = 'thanks';
+
+            const extraButtonContainer = document.getElementById('extra-button-container');
+            extraButtonContainer.innerHTML = '';
+
+            if (username === correctUsername && password === correctPassword) {
+                alert('Login successful!');
+
+                const newButton = document.createElement('a');
+                newButton.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+                newButton.className = 'new-button';
+                newButton.textContent = 'Click here for ___?';
+                extraButtonContainer.appendChild(newButton);
+            } else {
+                alert('Incorrect username or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

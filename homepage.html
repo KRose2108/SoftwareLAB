@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Buttons</title>
+</head>
+<body>
+    <style>
+            .navbar {
+                justify-content: right;
+            float: right;
+            display: flex;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            gap: 20px;
+        }
+        .image-button {
+            background-image: url('buttonbg.webp');
+            background-size: cover;
+            border: none;
+            color: white;
+            padding: 20px 40px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            border-radius: 20px;
+        }
+        .image-button:hover {
+            opacity: 0.8;
+        }
+    
+        .container {
+            width: 100%; 
+            height: 300px;
+            position: relative;
+        }
+        .container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 20px;
+            border-width: 30px;
+            margin-bottom: 30px;
+        }
+        .text{
+            float: left;
+            font-size: 20px;
+        }
+        .content {
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-family: 'Impact', sans-serif; /* Apply Impact font */
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Optional: Add glow effect to text */
+        }
+
+        .content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); }
+        
+
+    </style>
+    
+</head>
+<body bgcolor="gre">
+    <div class="navbar">
+       <a href="index.html">
+        <button  class="image-button" >
+            <b>Home</b>
+        </button></a>
+        <button onclick="scrollToSection('map')" class="image-button">
+            <b>Map</b>
+        </button>
+        <button class="image-button" onclick="scrollToSection('video')">
+            <b>Video</b>
+        </button>
+        <button class="image-button" onclick="scrollToSection('song')" style="margin-right: 50px;">
+            <b>Song</b>
+        </button>
+    </div>
+    <div class="bg" style="height: 100vh;border-radius: 20px; background-repeat: no-repeat; background-size: cover;background-image: url('bg.avif'); display: flex; flex-direction: column; justify-content: center; align-items: center; color: rgb(255, 255, 255); text-align: center; padding-top: 80px;">
+        <div class="content">
+            <h1>Welcome to the website made in 1 hour!</h1>
+            <p font="Ares">Experiment 3 of Software Engineering Lab</p>
+        </div>
+    </div>
+    <br>   <br>   <br>
+    <section id="map">
+        <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14881.596204893644!2d79.04311180114746!3d21.176300955491914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1006cc78ce9%3A0x37afa03de75a8708!2sRamdeobaba%20University%20(RBU)!5e0!3m2!1sen!2sin!4v1737370491941!5m2!1sen!2sin"
+             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+             referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>               
+    </section>
+    <br>   <br>   <br>
+    <section id="video">
+        <div class="container">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/G1ZurYR_rf8?si=c16Bd_9KMnqFBuIy" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+           </div>
+    </section>
+    <br>   <br>   <br>
+    <section id="song">
+        <div class="container">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7FEa01m9SgfOaam2AawVF6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> 
+         </div>
+    </section>
+    <br>   <br>   <br>
+    <center style="color: white;">
+        Made by Rohan :)
+    </center>
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            window.scrollTo({
+                top: section.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
