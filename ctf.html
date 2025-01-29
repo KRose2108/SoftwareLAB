@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* Hero Section */
+.hero {
+    background: #000000;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero .cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #00cb11;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.hero .cta-btn:hover {
+    background: #00cb11;
+}
+
+/* About Section */
+.about {
+    background: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Login Section */
+.login {
+    background: #000000;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.login form {
+    display: inline-block;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #00cb11;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.login button:hover {
+    background: #00cb11;
+}
+
+/* Footer */
+footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+    </style>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero" style="background-image: url(5184015.jpg); background-size: cover;background-position: center;">
+        <div class="hero-content">
+            <h1>Welcome to the Beg-CTF_ a beginner friendly CTF Platform</h1>
+            <p>Challenge your hacking skills and compete to capture the flag!</p>
+            <a href="#login" class="cta-btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>What is CTF?</h2>
+        <p>CTF (Capture the Flag) is a cybersecurity competition where participants solve security-related challenges to earn flags and points.</p>
+    </section>
+
+    <section id="login" class="login">
+        <h2>Login to Start Playing</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required style="color: #000000;">
+            <input type="password" id="password" placeholder="Password" required style="color: black;">
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#">Sign up here</a>
+    </section>
+
+    <footer>
+        <p>&copy; rohan.k21_ </p>
+    </footer>
+    <script>
+
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username=="rohan" && password=="thanks") {
+        window.location.href = "begctf.html";
+    } else {
+        alert("Please enter both username and password.");
+    }
+});
+
+    </script>
+</body>
+</html>

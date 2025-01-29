@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Contest</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: #282c34;
+            color: white;
+            padding: 15px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Challenge Section */
+        .challenge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .challenge {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 48%;
+        }
+
+        .challenge h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .start-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .start-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Flag Submission Section */
+        #submit form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #submit input {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #submit button {
+            padding: 10px 20px;
+            background-color: #f15a29;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #submit button:hover {
+            background-color: #d4411f;
+        }
+
+        /* Timer */
+        .timer {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #282c34;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CTF Contest</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#challenges">Challenges</a></li>
+                    <li><a href="#submit">Submit Flag</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About This Contest</h2>
+            <p>Welcome to the CTF contest. Solve the challenges and capture the flag to earn points. Good luck!</p>
+        </div>
+    </section>
+
+    <section id="challenges" class="section">
+        <div class="container">
+            <h2>Challenges</h2>
+            <div class="challenge-list">
+                <div class="challenge" id="challenge-1">
+                    <h3>Challenge 1: Teacher or Student?</h3>
+                    <p>Difficulty: Easy</p>
+                    <p>Clue : v626nhh
+                    </p>
+                    <button class="start-btn" onclick="startChallenge('challenge-1')">Start Challenge</button>
+                    <div class="clue" id="clue-1" style="display:none; margin-top: 10px;">
+                        <p>Clue: Look for the hidden parameter in the URL.</p>
+                        <div class="timer" id="timer-1">Time left: 5:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="submit" class="section">
+        <div class="container">
+            <h2>Submit Flag</h2>
+            <form id="flag-form">
+                <label for="flag-input">Enter the flag:</label>
+                <input type="text" id="flag-input" placeholder="Enter your flag here" required>
+                <button type="submit">Submit Flag</button>
+            </form>
+            <p id="submission-status"></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; rohan.k21_</p>
+        </div>
+    </footer>
+
+    <script>
+        // Start the challenge when the button is clicked
+        function startChallenge(challengeId) {
+            // Display clue and start the timer
+            const clueElement = document.getElementById('clue-' + challengeId.split('-')[1]);
+            clueElement.style.display = 'block';
+
+            // Start a 5-minute countdown
+            let timeLeft = 5 * 60; // 5 minutes in seconds
+            const timerElement = document.getElementById('timer-' + challengeId.split('-')[1]);
+
+            const timerInterval = setInterval(() => {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `Time left: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timerElement.textContent = 'Time is up!';
+                } else {
+                    timeLeft--;
+                }
+            }, 1000);
+        }
+
+        // Flag submission logic
+        document.getElementById("flag-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const flag = document.getElementById("flag-input").value.trim();
+            if (flag === "beg-CTF{rohan_flag}") {
+                document.getElementById("submission-status").textContent = "Flag submitted successfully! You earned points.";
+                document.getElementById("flag-input").value = "";
+            } else {
+                document.getElementById("submission-status").textContent = "Incorrect flag. Try again.";
+            }
+        });
+    </script>
+</body>
+</html>
