@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Chess</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: flex-start; 
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-bottom: 10px; 
+    margin-top: 20px;
+}
+
+section {
+    background-image: url('image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 65%;
+    height: 250px;
+    padding: 20px;
+    margin: 0 10px 10px 10px; /* Reduce bottom margin */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 255, 255);
+    flex-grow: 0;
+}
+
+.side {
+    background-image: url('openings.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px 10px 10px; /* Reduce bottom margin */
+    flex-grow: 0;
+}
+
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+        }
+
+        footer a {
+            position: fixed;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            section {
+                width: 90%;
+                height: 200px;
+                margin: 20px auto;
+            }
+
+            .side {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            nav a {
+                font-size: 16px;
+                padding: 8px;
+            }
+
+            section {
+                width: 100%;
+                height: 180px;
+                margin: 10px;
+            }
+
+            .side {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#pieces">Pieces</a>
+        <a href="#openings">Openings</a>
+        <a href="#midgame">Midgame Strategies</a>
+        <a href="#endgame">Endgame Strategies</a>
+    </nav>
+
+    <div class="container">
+        <section id="pieces">
+            <h2>Chess Pieces</h2>
+            <p>Chess pieces consist of six different types: King, Queen, Rooks, Knights, Bishops, and Pawns. Each piece has its unique way of moving on the board. The goal of the game is to checkmate the opponent's King while protecting your own King.</p>
+        </section>
+        <div class="side">
+
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="openings">
+            <h2>Chess Openings</h2>
+            <p>The opening phase of a chess game refers to the initial moves made by both players to control the center, develop their pieces, and ensure their King’s safety. Some popular chess openings include the Ruy Lopez, Sicilian Defense, and Queen's Gambit.</p>
+        </section>
+        <div class="side">
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="midgame">
+            <h2>Midgame Strategies</h2>
+            <p>During the midgame, players aim to create threats, control the board, and look for tactical opportunities to win material or gain positional advantage. Key concepts in the midgame include pawn structure, piece coordination, and tactical motifs like forks, pins, and skewers.</p>
+        </section>
+        <div class="side">
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="endgame">
+            <h2>Endgame Strategies</h2>
+            <p>The endgame begins when there are fewer pieces on the board. Players focus on promoting pawns to queens and checkmating the opponent. Proper King and pawn endgame techniques, along with understanding basic checkmating patterns, are crucial to win in the endgame.</p>
+        </section>
+        <div class="side">
+        </div>
+    </div>
+
+    <footer>
+        <p>by Rohan :)</p>
+    </footer>
+</body>
+</html>
